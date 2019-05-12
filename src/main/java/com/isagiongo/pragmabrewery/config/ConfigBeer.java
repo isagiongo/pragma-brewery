@@ -1,4 +1,4 @@
-package com.isagiongo.pragmabrewery.controller;
+package com.isagiongo.pragmabrewery.config;
 
 import java.util.Map;
 

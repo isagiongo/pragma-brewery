@@ -2,3 +2,8 @@ configuration:
    mapBeer:
       pilsner: pilsnerValidator
       ipa: IPAValidator
+      lager: lagerValidator
+      stout: stoutValidator
+      wheatbeer: wheatBeerValidator
+      paleale: paleAleValidator
+      

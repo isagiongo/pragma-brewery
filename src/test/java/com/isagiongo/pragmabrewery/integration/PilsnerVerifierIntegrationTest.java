@@ -14,7 +14,7 @@ import io.restassured.http.ContentType;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BeerVerifierIntegrationTest {
+public class PilsnerVerifierIntegrationTest {
 
 	@LocalServerPort
 	private int randomPort;
@@ -26,7 +26,7 @@ public class BeerVerifierIntegrationTest {
 	}
 
 	@Test
-	public void shouldValidateValidTemperatureForPilsner() {
+	public void shouldValidateIfTemperatureIsValidForPilsner() {
 		RestAssured
 				.given()
 				.contentType(ContentType.JSON)
@@ -38,7 +38,7 @@ public class BeerVerifierIntegrationTest {
 	}
 	
 	@Test
-	public void shouldValidateLowerTemperatureThenMinimumForPilsner() {
+	public void shouldValidateIfTemperatureIsLessThanMinimumForPilsner() {
 		RestAssured
 				.given()
 				.contentType(ContentType.JSON)
@@ -50,7 +50,7 @@ public class BeerVerifierIntegrationTest {
 	}
 	
 	@Test
-	public void shouldValidateHigherTemperatureThenMaximumForPilsner() {
+	public void shouldValidateIfTemperatureIsGreaterThanMaximumForPilsner() {
 		RestAssured
 				.given()
 				.contentType(ContentType.JSON)
@@ -59,17 +59,5 @@ public class BeerVerifierIntegrationTest {
 				.then()
 				.body("message", Matchers.equalTo("Invalid Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
-	}
-	
-	@Test
-	public void shouldValidateValidTemperatureForIpa() {
-		RestAssured
-				.given()
-				.contentType(ContentType.JSON)
-				.body("{\"temperature\": -5}")
-				.post("/v1/beers/{beerName}/validations", "IPA")
-				.then()
-				.body("message", Matchers.equalTo("Temperature OK"))
-				.statusCode(HttpStatus.OK.value());
 	}
 }

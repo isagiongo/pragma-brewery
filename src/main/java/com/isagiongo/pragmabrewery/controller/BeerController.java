@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.isagiongo.pragmabrewery.config.ConfigBeer;
 import com.isagiongo.pragmabrewery.controller.dto.BeerValidationDTO;
 import com.isagiongo.pragmabrewery.controller.dto.ResultValidationDTO;
 import com.isagiongo.pragmabrewery.validator.BeerValidator;
