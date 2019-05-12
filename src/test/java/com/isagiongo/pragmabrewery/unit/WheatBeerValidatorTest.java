@@ -1,14 +1,16 @@
 package com.isagiongo.pragmabrewery.unit;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import com.isagiongo.pragmabrewery.controller.dto.BeerValidationDTO;
 import com.isagiongo.pragmabrewery.validator.BeerValidator;
-import com.isagiongo.pragmabrewery.validator.PilsnerValidator;
+import com.isagiongo.pragmabrewery.validator.WheatBeerValidator;
 
-public class PilsnerValidatorTest {
+public class WheatBeerValidatorTest {
 
 	private BeerValidator beerValidator;
 	private BeerValidationDTO beerValidationDTO;
@@ -16,24 +18,24 @@ public class PilsnerValidatorTest {
 	@Before
 	public void setUp() {
 		beerValidationDTO = new BeerValidationDTO();
-		beerValidator = new PilsnerValidator();
+		beerValidator = new WheatBeerValidator();
 	}
 
 	@Test
-	public void shouldValidateIfTemperatureIsValidForPilsner() {
-		beerValidationDTO.setTemperature(-6.0);
+	public void shouldValidateIfTemperatureIsValidForLager() {
+		beerValidationDTO.setTemperature(-3.0);
 		assertTrue(beerValidator.isValidTemperature(beerValidationDTO));
 	}
 
 	@Test
-	public void shouldValidateIfTemperatureIsLessThanMinimumForPilsner() {
-		beerValidationDTO.setTemperature(-6.1);
+	public void shouldValidateIfTemperatureIsLessThanMinimumForLager() {
+		beerValidationDTO.setTemperature(-5.1);
 		assertFalse(beerValidator.isValidTemperature(beerValidationDTO));
 	}
 
 	@Test
-	public void shouldValidateIfTemperatureIsGreaterThanMaximumForPilsner() {
-		beerValidationDTO.setTemperature(-3.9);
+	public void shouldValidateIfTemperatureIsGreaterThanMaximumForLager() {
+		beerValidationDTO.setTemperature(-2.9);
 		assertFalse(beerValidator.isValidTemperature(beerValidationDTO));
 	}
 }
