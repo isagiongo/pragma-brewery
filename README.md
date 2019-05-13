@@ -1,4 +1,4 @@
-Code Challenge for PragmaTeam - DBServer
+Code Challenge for PragmaTeam - DBServer - V1
 
 - API Rest para validar a temperatura de determinado container de cerveja e responder se está adequada ou inválida. 
 - A requisição é feita via POST, enviando o tipo da cerveja na URL e a temperatura atual do container via body. 
