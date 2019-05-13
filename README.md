@@ -9,3 +9,6 @@ escalar em tipos de cerveja sem precisar sofrer modificações, seguindo o princ
 não utilizam. 
 - No arquivo application.yml os tipos de cerveja são mapeadas para seus validadores específicos, eliminando a necessidade de 
 IF's para identificar qual o validador deve ser utilizado quando é realizado uma requisição com o nome do tipo da cerveja.
+
+- Análise de código no Sonarcloud: https://sonarcloud.io/dashboard?id=isagiongo_pragma-brewery
+- Deploy no Heroku: https://pragma-brewery.herokuapp.com/
