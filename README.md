@@ -11,4 +11,4 @@ não utilizam.
 IF's para identificar qual o validador deve ser utilizado quando é realizado uma requisição com o nome do tipo da cerveja.
 
 - Análise de código no Sonarcloud: https://sonarcloud.io/dashboard?id=isagiongo_pragma-brewery
-- Deploy no Heroku: https://pragma-brewery.herokuapp.com/
+- Swagger (Deploy no Heroku): https://pragma-brewery.herokuapp.com/
