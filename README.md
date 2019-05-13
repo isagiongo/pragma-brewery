@@ -1,3 +1,11 @@
+[![Comments (%)](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=comment_lines_density)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=comment_lines_density)
+[![Open issues](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=open_issues)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=open_issues)
+[![Code smells](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=code_smells)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=code_smells)
+[![Technical debt](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=sqale_index)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=sqale_index)
+[![Bugs](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=bugs)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=bugs)
+[![Reliability remediation effort](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=reliability_remediation_effort)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=reliability_remediation_effort)
+[![Coverage](https://sonarcloud.io/api/badges/measure?key=isagiongo_pragma-brewery&metric=coverage)](https://sonarcloud.io/component_measures?id=isagiongo_pragma-brewery&metric=coverage)
+
 Code Challenge for PragmaTeam - DBServer - V1
 
 - API Rest para validar a temperatura de determinado container de cerveja e responder se está adequada ou inválida. 
