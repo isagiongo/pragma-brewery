@@ -17,4 +17,5 @@ não utilizam.
 IF's para identificar qual o validador deve ser utilizado quando é realizado uma requisição com o nome do tipo da cerveja.
 
 - Análise de código no Sonarcloud: https://sonarcloud.io/dashboard?id=isagiongo_pragma-brewery
-- Swagger (Deploy no Heroku): https://pragma-brewery.herokuapp.com/
+- Api Docs (Swagger): https://pragma-brewery.herokuapp.com/
+- Integração Contínua com Travis CI: https://travis-ci.org/isagiongo/pragma-brewery
