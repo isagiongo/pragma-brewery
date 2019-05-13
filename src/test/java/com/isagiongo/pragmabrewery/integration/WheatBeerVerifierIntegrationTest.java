@@ -26,6 +26,17 @@ public class WheatBeerVerifierIntegrationTest {
 	}
 
 	@Test
+	public void shouldValidateIfTemperatureIsNull() {
+		RestAssured
+				.given()
+				.contentType(ContentType.JSON)
+				.body("{\"temperature\": \"\"}")
+				.post("/v1/beers/{beerName}/validations", "WheatBeer")
+				.then()
+				.statusCode(HttpStatus.BAD_REQUEST.value());
+	}
+	
+	@Test
 	public void shouldValidateIfTemperatureIsValidForWheatBeer() {
 		RestAssured
 				.given()

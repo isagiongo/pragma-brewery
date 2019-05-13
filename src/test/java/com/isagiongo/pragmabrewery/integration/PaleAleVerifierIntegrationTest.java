@@ -24,6 +24,17 @@ public class PaleAleVerifierIntegrationTest {
 		RestAssured.baseURI = "http://localhost";
 		RestAssured.port = randomPort;
 	}
+	
+	@Test
+	public void shouldValidateIfTemperatureIsNull() {
+		RestAssured
+				.given()
+				.contentType(ContentType.JSON)
+				.body("{\"temperature\": \"\"}")
+				.post("/v1/beers/{beerName}/validations", "PaleAle")
+				.then()
+				.statusCode(HttpStatus.BAD_REQUEST.value());
+	}
 
 	@Test
 	public void shouldValidateIfTemperatureIsValidForPaleAle() {

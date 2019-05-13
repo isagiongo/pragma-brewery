@@ -2,6 +2,8 @@ package com.isagiongo.pragmabrewery.controller;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +18,7 @@ import com.isagiongo.pragmabrewery.validator.BeerValidator;
 
 @RestController
 public class BeerController {
-	
+
 	private Map<String, BeerValidator> mapBeerValidator;
 
 	private ConfigBeer configBeer;
@@ -26,13 +28,14 @@ public class BeerController {
 		this.configBeer = configBeer;
 	}
 
-	@PostMapping(value="/v1/beers/{beerName}/validations")
-	public ResponseEntity<?> validateTemperature(@PathVariable String beerName, @RequestBody BeerValidationDTO beerValidationDTO){
+	@PostMapping(value = "/v1/beers/{beerName}/validations")
+	public ResponseEntity<?> validateTemperature(@PathVariable String beerName,
+			@Valid @RequestBody BeerValidationDTO beerValidationDTO) {
 		ResultValidationDTO result = new ResultValidationDTO();
 		String validatorName = configBeer.getMapBeer().get(beerName.toLowerCase());
 		BeerValidator beerValidator = mapBeerValidator.get(validatorName);
-		
-		if(beerValidator.isValidTemperature(beerValidationDTO)) {
+
+		if (beerValidator.isValidTemperature(beerValidationDTO)) {
 			result.setMessage("Temperature OK");
 			return ResponseEntity.ok(result);
 		} else {
