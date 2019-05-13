@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/isagiongo/pragma-brewery.svg?branch=master)](https://travis-ci.org/isagiongo/pragma-brewery)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=isagiongo_pragma-brewery&metric=alert_status)](https://sonarcloud.io/dashboard?id=isagiongo_pragma-brewery)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=isagiongo_pragma-brewery&metric=coverage)](https://sonarcloud.io/dashboard?id=isagiongo_pragma-brewery)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=isagiongo_pragma-brewery&metric=bugs)](https://sonarcloud.io/dashboard?id=isagiongo_pragma-brewery)
