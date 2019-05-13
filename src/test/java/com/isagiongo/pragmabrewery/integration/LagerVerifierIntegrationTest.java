@@ -56,7 +56,7 @@ public class LagerVerifierIntegrationTest {
 				.body("{\"temperature\": -8}")
 				.post("/v1/beers/{beerName}/validations", "Lager")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 	
@@ -68,7 +68,7 @@ public class LagerVerifierIntegrationTest {
 				.body("{\"temperature\": -3}")
 				.post("/v1/beers/{beerName}/validations", "Lager")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 }

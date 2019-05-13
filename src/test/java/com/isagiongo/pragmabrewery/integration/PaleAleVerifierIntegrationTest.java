@@ -56,7 +56,7 @@ public class PaleAleVerifierIntegrationTest {
 				.body("{\"temperature\": -6.1}")
 				.post("/v1/beers/{beerName}/validations", "PaleAle")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 	
@@ -68,7 +68,7 @@ public class PaleAleVerifierIntegrationTest {
 				.body("{\"temperature\": -3}")
 				.post("/v1/beers/{beerName}/validations", "PaleAle")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 }

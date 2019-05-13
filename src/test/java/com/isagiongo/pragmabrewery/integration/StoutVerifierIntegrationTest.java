@@ -56,7 +56,7 @@ public class StoutVerifierIntegrationTest {
 				.body("{\"temperature\": -9}")
 				.post("/v1/beers/{beerName}/validations", "Stout")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 	
@@ -68,7 +68,7 @@ public class StoutVerifierIntegrationTest {
 				.body("{\"temperature\": -5}")
 				.post("/v1/beers/{beerName}/validations", "Stout")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 }

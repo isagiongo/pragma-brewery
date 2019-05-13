@@ -39,7 +39,7 @@ public class BeerController {
 			result.setMessage("Temperature OK");
 			return ResponseEntity.ok(result);
 		} else {
-			result.setMessage("Invalid Temperature");
+			result.setMessage("Inappropriate Temperature");
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(result);
 		}
 	}

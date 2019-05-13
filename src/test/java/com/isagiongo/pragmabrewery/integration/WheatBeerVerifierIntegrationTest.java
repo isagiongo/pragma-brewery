@@ -56,7 +56,7 @@ public class WheatBeerVerifierIntegrationTest {
 				.body("{\"temperature\": -6}")
 				.post("/v1/beers/{beerName}/validations", "WheatBeer")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 	
@@ -68,7 +68,7 @@ public class WheatBeerVerifierIntegrationTest {
 				.body("{\"temperature\": -2}")
 				.post("/v1/beers/{beerName}/validations", "WheatBeer")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 }

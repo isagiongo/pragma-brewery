@@ -56,7 +56,7 @@ public class IpaVerifierIntegrationTest {
 				.body("{\"temperature\": -7}")
 				.post("/v1/beers/{beerName}/validations", "Ipa")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 	
@@ -68,7 +68,7 @@ public class IpaVerifierIntegrationTest {
 				.body("{\"temperature\": -4}")
 				.post("/v1/beers/{beerName}/validations", "Ipa")
 				.then()
-				.body("message", Matchers.equalTo("Invalid Temperature"))
+				.body("message", Matchers.equalTo("Inappropriate Temperature"))
 				.statusCode(HttpStatus.EXPECTATION_FAILED.value());
 	}
 }
