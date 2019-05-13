@@ -36,14 +36,18 @@ public class BeerController {
 			@Valid @RequestBody BeerValidationDTO beerValidationDTO) {
 		ResultValidationDTO result = new ResultValidationDTO();
 		String validatorName = configBeer.getMapBeer().get(beerName.toLowerCase());
-		BeerValidator beerValidator = mapBeerValidator.get(validatorName);
-
-		if (beerValidator.isValidTemperature(beerValidationDTO)) {
-			result.setMessage("Temperature OK");
-			return ResponseEntity.ok(result);
+		if (validatorName != null) {
+			BeerValidator beerValidator = mapBeerValidator.get(validatorName);
+			if (beerValidator.isValidTemperature(beerValidationDTO)) {
+				result.setMessage("Temperature OK");
+				return ResponseEntity.ok(result);
+			} else {
+				result.setMessage("Inappropriate Temperature");
+				return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(result);
+			}
 		} else {
-			result.setMessage("Inappropriate Temperature");
-			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(result);
+			result.setMessage("Invalid Beer");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
 		}
-	}
+	}		
 }
