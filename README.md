@@ -6,9 +6,13 @@
 
 # Code Challenge for PragmaTeam - DBServer - V1
 
-### Para testar a API:
-#### A API está no Heroku,  então não é necessário rodar localmente. Com a interface do Swagger é possível testar a requisição
-1. Acesse https://pragma-brewery.herokuapp.com/
+#### Para rodar a API localmente:
+1. Baixe o código fonte, extraia em um diretório e acesse a pasta do projeto (pragma-brewery). Abra o terminal / linha de comando a partir dessa pasta.
+2. Execute o comando **_gradle build_**
+3. Execute o comando **_java -jar build/libs/pragma-brewery-0.0.1-SNAPSHOT.jar_**
+
+#### Para rodar/acessar via web com o Heroku e testar a requisição
+1. Acesse https://pragma-brewery.herokuapp.com/ 
 2. Clique em BeerController > POST Validade Temperature > Try it out
 3. Digite no campo Beer Name, o nome da cerveja que você quer verificar (Opções válidas: Lager, IPA, Pilsner, Stout, PaleAle, WheatBeer)
 4. Digite em Temperature, a temperatura atual do container que armazena a cerveja escolhida. Aceita valores positivos e negativos, como por exemplo: -1, -8, 0, 2, 5, ect.
@@ -23,6 +27,7 @@
 * Gradle
 * JUnit
 * Rest Assured
+* Jacoco
 * Swagger
 * Travis CI
 * Sonarcloud
