@@ -18,5 +18,4 @@ public class ConfigBeer {
 	public void setMapBeer(Map<String, String> mapBeer) {
 		this.mapBeer = mapBeer;
 	}
-
 }

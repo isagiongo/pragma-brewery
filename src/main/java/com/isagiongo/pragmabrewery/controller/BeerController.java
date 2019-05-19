@@ -32,9 +32,10 @@ public class BeerController {
 
 	@ApiOperation(value = "Valid temperature")
 	@PostMapping(value = "/v1/beers/{beerName}/validations")
-	public ResponseEntity<?> validateTemperature(@PathVariable String beerName,
+	public ResponseEntity<ResultValidationDTO> validateTemperature(@PathVariable String beerName,
 			@Valid @RequestBody BeerValidationDTO beerValidationDTO) {
 		ResultValidationDTO result = new ResultValidationDTO();
+		
 		String validatorName = configBeer.getMapBeer().get(beerName.toLowerCase());
 		if (validatorName != null) {
 			BeerValidator beerValidator = mapBeerValidator.get(validatorName);
@@ -49,5 +50,5 @@ public class BeerController {
 			result.setMessage("Invalid Beer");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
 		}
-	}		
+	}
 }
