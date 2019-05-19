@@ -17,6 +17,7 @@ import com.isagiongo.pragmabrewery.controller.dto.ResultValidationDTO;
 import com.isagiongo.pragmabrewery.validator.BeerValidator;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RestController
 public class BeerController {
@@ -30,10 +31,10 @@ public class BeerController {
 		this.configBeer = configBeer;
 	}
 
-	@ApiOperation(value = "Valid temperature")
+	@ApiOperation(value = "Validate temperature")
 	@PostMapping(value = "/v1/beers/{beerName}/validations")
-	public ResponseEntity<ResultValidationDTO> validateTemperature(@PathVariable String beerName,
-			@Valid @RequestBody BeerValidationDTO beerValidationDTO) {
+	public ResponseEntity<ResultValidationDTO> validateTemperature(@ApiParam (required = true, value="Beer Name - Options: Lager, IPA, Stout, Pilsner, WheatBeer, PaleAle") @PathVariable String beerName,
+			@Valid @RequestBody @ApiParam (required = true, value="Temperature") BeerValidationDTO beerValidationDTO) {
 		ResultValidationDTO result = new ResultValidationDTO();
 		
 		String validatorName = configBeer.getMapBeer().get(beerName.toLowerCase());
